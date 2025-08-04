@@ -1,10 +1,13 @@
 //your parameter variables go here!
-let centre_diameter = 50
-let centre_coord = 100
+let centre_diameter = 25
+let centre_x = 100
+let centre_y = 100
+let stem_width = 8
+
 
 function setup_wallpaper(pWallpaper) {
-  //pWallpaper.output_mode(DEVELOP_GLYPH);
-  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.output_mode(DEVELOP_GLYPH);
+  //pWallpaper.output_mode(GRID_WALLPAPER);
   
   pWallpaper.resolution(FIT_TO_SCREEN);
   pWallpaper.show_guide(true); //set this to false when you're ready to print
@@ -20,21 +23,37 @@ function wallpaper_background() {
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
-
+  //stem
+  if(centre_diameter <= 40){
+    noFill();
+    stroke(64, 97, 77);
+    strokeWeight(stem_width);
+    curve(10,150,100,200,centre_x, centre_y,500,125);
+  }
   //petals
+  strokeWeight(1)
   stroke(69, 15, 46)//purple
   fill(110, 29, 49)//red
-  //triangle(160, 150, 170, 140, 180, 150)
-  ellipse(centre_coord, centre_coord, centre_diameter + 120, centre_diameter - 10)
-  ellipse(centre_coord, centre_coord, centre_diameter - 10, centre_diameter + 120)
+  triangle(centre_x, centre_y + (centre_diameter / 2), centre_x, centre_y - (centre_diameter * 0.6), centre_x + centre_diameter, centre_y + (centre_diameter * 0.9))
+  triangle(centre_x, centre_y + (centre_diameter / 2), centre_x, centre_y - (centre_diameter * 0.6), centre_x - centre_diameter, centre_y + (centre_diameter * 0.9))
+  triangle(centre_x, centre_y + (centre_diameter / 2), centre_x, centre_y - (centre_diameter * 0.6), centre_x - centre_diameter, centre_y - (centre_diameter * 0.9))
+  triangle(centre_x, centre_y + (centre_diameter / 2), centre_x, centre_y - (centre_diameter * 0.6), centre_x + centre_diameter, centre_y - (centre_diameter * 0.9))
+  ellipse(centre_x, centre_y, centre_diameter * 3.4, centre_diameter * 0.8)
+  ellipse(centre_x, centre_y, centre_diameter * 0.8, centre_diameter * 3.4)
+  //flower veins
+  strokeWeight(3)
+  stroke(49, 44, 71)
+  line(centre_x + centre_diameter, centre_y, centre_x - centre_diameter, centre_y)
+  line(centre_x, centre_y + centre_diameter, centre_x, centre_y - centre_diameter)
   //centre
   fill(168, 133, 99)//brown
   stroke(135, 76, 36)//dark brown
-  strokeWeight(2)
-  ellipse(centre_coord, centre_coord, centre_diameter + 20, centre_diameter + 20)
-  strokeWeight(14)
+  strokeWeight(centre_diameter * 0.04)
+  ellipse(centre_x, centre_y, centre_diameter * 1.4, centre_diameter * 1.4)
+  strokeWeight(centre_diameter * 0.28)
   stroke(209, 158, 40)//orange
   fill(240, 234, 125)//yellow
-  ellipse(centre_coord, centre_coord, centre_diameter, centre_diameter)
+  ellipse(centre_x, centre_y, centre_diameter, centre_diameter)
+
 }
 
