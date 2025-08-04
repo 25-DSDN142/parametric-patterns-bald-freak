@@ -23,12 +23,21 @@ function wallpaper_background() {
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
+  angleMode(DEGREES)
   //stem
   if(centre_diameter <= 40){
     noFill();
-    stroke(64, 97, 77);
+    stroke(64, 97, 77);//dark green
     strokeWeight(stem_width);
     curve(10,150,100,200,centre_x, centre_y,500,125);
+    if(stem_width >= 8){
+      stroke(64, 97, 77)
+      strokeWeight(1)
+      fill(93, 179, 127)//light green
+      //rotate(45)
+      ellipse(centre_x + 20, centre_y + 20,50,30)
+      ellipse(centre_x - 20, centre_y + 20,50,30)
+    }
   }
   //petals
   strokeWeight(1)
