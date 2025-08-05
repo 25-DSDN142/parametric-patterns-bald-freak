@@ -1,9 +1,9 @@
 //your parameter variables go here!
-let centre_diameter = 50
-let centre_x = 100
-let centre_y = 100
-let stem_width = 8
-let leaf_size = 50
+let centre_diameter = 50 //this changes the size of the entire flower, and everything on the flower (petals, etc) is in relation to the size of the centre
+let centre_x = 100 //this moves the flower on the x coordinate
+let centre_y = 100 //this moves the flower on the y coordinate
+let stem_width = 8 //this changes the size of the stem
+let leaf_size = 50 //this changes the size of the leaves on the stem
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
@@ -68,12 +68,12 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   vertex(150, 160)
   endShape(CLOSE)
   //stem
-  if(centre_diameter <= 40){
+  if(centre_diameter <= 40){ //this makes the stem appear only if the flower size is set to 40 or less, as otherwise the flower takes up too much space and the stem wouldn't be visible
     noFill();
     stroke(64, 97, 77);//dark green
     strokeWeight(stem_width);
     curve(10,150,100,200,centre_x, centre_y,500,125);
-    if(stem_width >= 8){
+    if(stem_width >= 8){ //this makes the stem leaves appear only if the stem is thick enough to support them
       stroke(64, 97, 77)
       strokeWeight(1)
       fill(93, 179, 127)//light green
