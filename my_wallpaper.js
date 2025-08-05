@@ -1,9 +1,9 @@
 //your parameter variables go here!
-let centre_diameter = 30 //this changes the size of the entire flower, and everything on the flower (petals, etc) is in relation to the size of the centre
+let centre_diameter = 50 //this changes the size of the entire flower, and everything on the flower (petals, etc) is in relation to the size of the centre
 let centre_x = 100 //this moves the flower on the x coordinate
 let centre_y = 100 //this moves the flower on the y coordinate
-let stem_width = 9 //this changes the size of the stem
-let leaf_size = 60 //this changes the size of the leaves on the stem
+let stem_width = 8 //this changes the size of the stem
+let leaf_size = 50 //this changes the size of the leaves on the stem
 
 function setup_wallpaper(pWallpaper) {
   //pWallpaper.output_mode(DEVELOP_GLYPH);
@@ -15,7 +15,7 @@ function setup_wallpaper(pWallpaper) {
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
   pWallpaper.grid_settings.cell_height = 200;
-  pWallpaper.grid_settings.row_offset  = 100;
+  pWallpaper.grid_settings.row_offset  = 50;
 }
 
 function wallpaper_background() {
