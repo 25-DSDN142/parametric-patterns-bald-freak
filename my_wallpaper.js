@@ -9,7 +9,7 @@ function setup_wallpaper(pWallpaper) {
   //pWallpaper.output_mode(DEVELOP_GLYPH);
   pWallpaper.output_mode(GRID_WALLPAPER);
   
-  pWallpaper.resolution(FIT_TO_SCREEN);
+  pWallpaper.resolution(A3);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
