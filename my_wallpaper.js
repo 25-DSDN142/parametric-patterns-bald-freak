@@ -1,9 +1,9 @@
 //your parameter variables go here!
-let centre_diameter = 25
+let centre_diameter = 30
 let centre_x = 100
 let centre_y = 100
 let stem_width = 8
-
+let leaf_size = 100
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
@@ -23,7 +23,6 @@ function wallpaper_background() {
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
-  angleMode(DEGREES)
   //stem
   if(centre_diameter <= 40){
     noFill();
@@ -34,11 +33,54 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
       stroke(64, 97, 77)
       strokeWeight(1)
       fill(93, 179, 127)//light green
-      //rotate(45)
       ellipse(centre_x + 20, centre_y + 20,50,30)
       ellipse(centre_x - 20, centre_y + 20,50,30)
     }
   }
+  //leaves
+  stroke(64, 97, 77)
+  strokeWeight(2)
+  fill(93, 179, 127)
+  beginShape()
+  vertex(130, 70)
+  vertex(160, 70)
+  vertex(190, 60)
+  vertex(160, 50)
+  vertex(130, 70)
+  vertex(141, 43)
+  vertex(170, 20)
+  vertex(160, 50)
+  endShape(CLOSE)
+  beginShape()
+  vertex(70, 130)
+  vertex(70, 160)
+  vertex(60, 190)
+  vertex(50, 160)
+  vertex(70, 130)
+  vertex(43, 141)
+  vertex(20, 170)
+  vertex(50, 160)
+  endShape(CLOSE)
+  beginShape()
+  vertex(70, 70)
+  vertex(40, 70)
+  vertex(10, 60)
+  vertex(40, 50)
+  vertex(70, 70)
+  vertex(59, 43)
+  vertex(30, 20)
+  vertex(40, 50)
+  endShape(CLOSE)
+  beginShape()
+  vertex(130, 130)
+  vertex(130, 160)
+  vertex(140, 190)
+  vertex(150, 160)
+  vertex(130, 130)
+  vertex(157, 141)
+  vertex(180, 170)
+  vertex(150, 160)
+  endShape(CLOSE)
   //petals
   strokeWeight(1)
   stroke(69, 15, 46)//purple
@@ -63,6 +105,5 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   stroke(209, 158, 40)//orange
   fill(240, 234, 125)//yellow
   ellipse(centre_x, centre_y, centre_diameter, centre_diameter)
-
 }
 
