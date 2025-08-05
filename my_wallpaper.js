@@ -1,9 +1,9 @@
 //your parameter variables go here!
-let centre_diameter = 30
+let centre_diameter = 50
 let centre_x = 100
 let centre_y = 100
 let stem_width = 8
-let leaf_size = 100
+let leaf_size = 50
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
@@ -23,21 +23,7 @@ function wallpaper_background() {
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
-  //stem
-  if(centre_diameter <= 40){
-    noFill();
-    stroke(64, 97, 77);//dark green
-    strokeWeight(stem_width);
-    curve(10,150,100,200,centre_x, centre_y,500,125);
-    if(stem_width >= 8){
-      stroke(64, 97, 77)
-      strokeWeight(1)
-      fill(93, 179, 127)//light green
-      ellipse(centre_x + 20, centre_y + 20,50,30)
-      ellipse(centre_x - 20, centre_y + 20,50,30)
-    }
-  }
-  //leaves
+    //decorative background leaves
   stroke(64, 97, 77)
   strokeWeight(2)
   fill(93, 179, 127)
@@ -81,6 +67,20 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   vertex(180, 170)
   vertex(150, 160)
   endShape(CLOSE)
+  //stem
+  if(centre_diameter <= 40){
+    noFill();
+    stroke(64, 97, 77);//dark green
+    strokeWeight(stem_width);
+    curve(10,150,100,200,centre_x, centre_y,500,125);
+    if(stem_width >= 8){
+      stroke(64, 97, 77)
+      strokeWeight(1)
+      fill(93, 179, 127)//light green
+      ellipse(centre_x + 20, centre_y + 20,leaf_size, leaf_size * 0.6)
+      ellipse(centre_x - 20, centre_y + 20,leaf_size, leaf_size * 0.6)
+    }
+  }
   //petals
   strokeWeight(1)
   stroke(69, 15, 46)//purple
